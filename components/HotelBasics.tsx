@@ -18,7 +18,7 @@ const HotelBasics: React.FC<Props> = async ({ slug }) => {
 export default HotelBasics;
 
 const getHotelBasics = async (slug: string) => {
-  await new Promise((res) => setTimeout(res, 200));
+  await new Promise((res) => setTimeout(res, 2000));
   return {
     name: "Hotel Name",
     description: "Hotel Description",

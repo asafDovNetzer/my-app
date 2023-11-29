@@ -1,4 +1,3 @@
-import { get } from "http";
 import React from "react";
 
 interface Props {
@@ -9,9 +8,10 @@ interface Props {
 }
 
 const HotelPage: React.FC<Props> = async (props) => {
-  console.log("props", props);
+
   const firstRes = await getHotelBySlug(props.params.slug);
-  console.log("firstRes", firstRes);
+  
+console.log('firstRes', firstRes);
   return (
     <div>
       <h1>Hotel Page</h1>
@@ -36,7 +36,7 @@ const getHotelBySlug = async (slug: string) => {
   };
 
   // simulate a 1 second delay
-  await new Promise((res) => setTimeout(res, 500));
+  await new Promise((res) => setTimeout(res, 4000));
 
   return hotel;
 };

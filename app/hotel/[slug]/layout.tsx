@@ -4,6 +4,7 @@ import HotelTabNavigator from "@/components/HotelTabNavigator";
 import React, { Suspense } from "react";
 
 const HotelLayout = async ({ params, children }: LayoutProps) => {
+
   console.log("props in layout", params);
   return (
     <>
@@ -16,14 +17,16 @@ const HotelLayout = async ({ params, children }: LayoutProps) => {
           backgroundColor: "yellow",
         }}
       >
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>ghh...</div>}>
           <HotelBasics slug={params.slug} />
         </Suspense>
         <Suspense fallback={<div>Loading...</div>}>
           <HotelTabNavigator slug={params.slug} />
         </Suspense>
       </div>
-      <Suspense fallback={<div>Loading...</div>}> {children}</Suspense>
+      {/* <Suspense fallback={<div>Loading...</div>}>  */}
+      {children}
+      {/* </Suspense> */}
     </>
   );
 };
